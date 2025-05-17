@@ -95,11 +95,18 @@
       "pre-commit": "lint-staged"
     }
   },
+  
   "scripts": {
     "clean": "rimraf dist/assets dist/index.html",
     "prebuild": "npm run clean",
-    "build": "cross-env webpack",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack",
     "prestart": "npm run clean",
-    "start": "cross-env NODE_ENV=development webpack-dev-server"
+    "start": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server"
   }
+    
+
+  
+  
+  
+
 }
